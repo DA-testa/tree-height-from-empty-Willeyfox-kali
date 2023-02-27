@@ -5,19 +5,34 @@ import threading
 
 
 def compute_height(n, parents):
-    koks = [[] for _ in range(n)]
+    koks = [[] for i in range(n)]
+    sakne = -1
     for i in range (n): 
-        if parents [1] == -1:
+        parent = parents[i]
+        if parent == -1:
             sakne = i
         else:
-            koks[parents[i]].append(1)
+            koks[parent].append(i)
     # Write this function
     max_height = 0
+    lvl = [sakne]
+    while lvl:
+        max_height = max_height + 1
+        lvlup = []
+        for nodes in lvl:
+            for child in koks[nodes]:
+                lvlup.append(child)
+        lvl = lvlup
     # Your code here
     return max_height
 
 
 def main():
+    parbaude = input()
+    if parbaude == 'I':
+        n = input()
+        parents = list(map(input().split()))
+    print(compute_height(n, parents))
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
