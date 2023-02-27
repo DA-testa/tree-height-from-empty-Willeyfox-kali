@@ -30,8 +30,8 @@ def compute_height(n, parents):
 def main():
     parbaude = input()
     if parbaude == 'I':
-        n = input()
-        parents = list(map(input().split()))
+        n = int(input())
+        parents = list(map(int, input().split()))
     print(compute_height(n, parents))
     # implement input form keyboard and from files
     
