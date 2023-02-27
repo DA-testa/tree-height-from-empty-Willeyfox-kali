@@ -34,11 +34,13 @@ def main():
         parents = list(map(int, input().split()))
         rezult = compute_height(n, parents)
         print(rezult)
-    if n == 'F':
-        n = int(input())
-        parents = list(map(int, input().split()))
-        rezult = compute_height(n, parents)
-        print(rezult)
+    elif n == 'F':
+        file = input()
+        with open (file) as f:
+            n = int(file.readline().strip())
+            parents = list(map(int, file.readline().strip().split()))
+            rezult = compute_height(n, parents)
+            print(rezult)
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
