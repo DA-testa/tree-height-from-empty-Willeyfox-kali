@@ -5,6 +5,12 @@ import threading
 
 
 def compute_height(n, parents):
+    koks = [[] for _ in range(n)]
+    for i in range (n): 
+        if parents [1] == -1:
+            sakne = i
+        else:
+            koks[parents[i]].append(1)
     # Write this function
     max_height = 0
     # Your code here
