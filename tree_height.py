@@ -28,11 +28,12 @@ def compute_height(n, parents):
 
 
 def main():
-    parbaude = input()
-    if parbaude == 'F':
+    n = input().strip()
+    if n == 'I':
         n = int(input())
         parents = list(map(int, input().split()))
-        print(compute_height(n, parents))
+        rezult = compute_height(n, parents)
+        print(rezult)
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
